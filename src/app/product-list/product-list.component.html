@@ -33,7 +33,8 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="save(modal)">Save</button>
+      <button type="button" class="btn btn-danger" (click)="delete(selectedProduct, modal)">Delete</button>
+      <button type="button" class="btn btn-success" (click)="save(modal)">Save</button>
     </div>
   </ng-template>
 
@@ -67,7 +68,7 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value)">Add</button>
+      <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value, modal)">Add</button>
     </div>
   </ng-template>
 

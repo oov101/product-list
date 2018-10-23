@@ -44,6 +44,17 @@ export class ProductService {
     );
   }
 
+  /** DELETE: delete the hero from the server */
+  deleteHero (product: Product | number): Observable<Product> {
+    const id = typeof product === 'number' ? product : product.id;
+    const url = `${this.productsUrl}/${id}`;
+
+    return this.http.delete<Product>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted product id=${id}`)),
+      catchError(this.handleError<Product>('deleteProduct'))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`ProductService: ${message}`);

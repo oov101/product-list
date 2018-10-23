@@ -51,7 +51,7 @@ export class ProductListComponent implements OnInit {
       });
   }
 
-  add(photoURL: string, name: string, kcal: number, price: number, description): void {
+  add(photoURL: string, name: string, kcal: number, price: number, description: string, modal): void {
     if (!photoURL) { return; }
     if (!name) { return; }
     if (!kcal) { return; }
@@ -64,9 +64,13 @@ export class ProductListComponent implements OnInit {
       .subscribe(product => {
         this.products.push(product);
       });
+      modal.close('Save click');
+  }
 
-    console.log(photoURL, name, kcal, price, description);
-
+  delete(product: Product, modal): void {
+    this.products = this.products.filter(h => h !== product);
+    this.productService.deleteHero(product).subscribe();
+    modal.close('Save click');
   }
 
   private getDismissReason(reason: any): string {
