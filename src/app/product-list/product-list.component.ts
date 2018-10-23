@@ -43,7 +43,12 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  save(modal): void {
+  save(modal, name, kcal, price, description): void {
+    this.selectedProduct.name = name.value;
+    this.selectedProduct.kcal = kcal.value;
+    this.selectedProduct.price = price.value;
+    this.selectedProduct.description = description.value;
+
     this.productService.updateProduct(this.selectedProduct)
       .subscribe(() => {
         modal.close('Save click')
