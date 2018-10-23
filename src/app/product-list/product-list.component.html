@@ -12,19 +12,19 @@
           <div class="product-img" [style.background-image]="'url(' + selectedProduct.photoURL + ')'"></div>
         <div>
           <label>name:</label>
-          <input [(ngModel)]="selectedProduct.name" name="name" class="form-control">
+          <input #name [ngModel]="selectedProduct.name" name="name" class="form-control">
         </div>
         <div>
           <label>kcal:</label>
-          <input [(ngModel)]="selectedProduct.kcal" name="kcal" class="form-control">
+          <input #kcal [ngModel]="selectedProduct.kcal" name="kcal" class="form-control">
         </div>
         <div>
           <label>price:</label>
-          <input [(ngModel)]="selectedProduct.price" name="price" class="form-control">
+          <input #price [ngModel]="selectedProduct.price" name="price" class="form-control">
         </div>
         <div>
           <label>description:</label>
-          <textarea [(ngModel)]="selectedProduct.description" name="description" class="form-control"></textarea>
+          <textarea #description [ngModel]="selectedProduct.description" name="description" class="form-control"></textarea>
         </div>
         <div>
           <p>Add time: {{ selectedProduct.addTime }}</p>
@@ -34,7 +34,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" (click)="delete(selectedProduct, modal)">Delete</button>
-      <button type="button" class="btn btn-success" (click)="save(modal)">Save</button>
+      <button type="button" class="btn btn-success" (click)="save(modal, name, kcal, price, description)">Save</button>
     </div>
   </ng-template>
 
