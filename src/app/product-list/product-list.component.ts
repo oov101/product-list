@@ -73,6 +73,8 @@ export class ProductListComponent implements OnInit {
   }
 
   delete(product: Product, modal): void {
+    let result = confirm("Are you sure you want to delete this item?");
+    if (!result) return;
     this.products = this.products.filter(h => h !== product);
     this.productService.deleteHero(product).subscribe();
     modal.close('Save click');
