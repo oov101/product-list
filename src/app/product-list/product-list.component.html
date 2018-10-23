@@ -1,5 +1,44 @@
 <div>
-  <ul>
-    <li *ngFor="let product of products">{{ product.name }}</li>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Product detail</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+          <div class="product-img" [style.background-image]="'url(' + selectedProduct.photoURL + ')'"></div>
+        <div>
+          <label>name:</label>
+          <input [(ngModel)]="selectedProduct.name" name="name" class="form-control">
+        </div>
+        <div>
+          <label>kcal:</label>
+          <input [(ngModel)]="selectedProduct.kcal" name="kcal" class="form-control">
+        </div>
+        <div>
+          <label>price:</label>
+          <input [(ngModel)]="selectedProduct.price" name="price" class="form-control">
+        </div>
+        <div>
+          <label>description:</label>
+          <textarea [(ngModel)]="selectedProduct.description" name="description" class="form-control"></textarea>
+        </div>
+        <div>
+          <p>Add time: {{ selectedProduct.addTime }}</p>
+          <p *ngIf="selectedProduct.updateTime.length">Recent update: {{ selectedProduct.updateTime }}</p>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let product of products" (click)="combineOnSelectAndOpen(product, content)"
+      [class.selected]="product === selectedProduct">
+      {{ product.name }}
+    </li>
   </ul>
 </div>

@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     price: 2.69,
     description: "Piwo jasne, alk. 5,2% obj., pasteryzowane.",
     addTime: "23-10-2018 11:25",
-    updateTime: "",
+    updateTime: "23-10-2018 13:17",
     photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010209_6.jpg"
   },
   { 
