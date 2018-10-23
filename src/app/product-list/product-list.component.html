@@ -1,5 +1,6 @@
 <div>
-  <ng-template #content let-modal>
+
+  <ng-template #selectedProductModal let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Product detail</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -35,13 +36,50 @@
       <button type="button" class="btn btn-outline-dark" (click)="save(modal)">Save</button>
     </div>
   </ng-template>
+
+  <ng-template #addNewProductModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Product detail</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+          <label>photo URL:</label>
+          <input #photoURL  class="form-control"/>
+        <div>
+          <label>name:</label>
+          <input #name  class="form-control"/>
+        </div>
+        <div>
+          <label>kcal:</label>
+          <input #kcal  class="form-control"/>
+        </div>
+        <div>
+          <label>price:</label>
+          <input #price  class="form-control"/>
+        </div>
+        <div>
+          <label>description:</label>
+          <textarea #description class="form-control"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value)">Add</button>
+    </div>
+  </ng-template>
+
   <ul class="list-group">
-    <li class="list-group-item list-group-item-action" *ngFor="let product of products" (click)="combineOnSelectAndOpen(product, content)"
+    <li class="list-group-item list-group-item-action" *ngFor="let product of products" (click)="combineOnSelectAndOpen(product, selectedProductModal)"
       [class.selected]="product === selectedProduct">
       {{ product.name }}
     </li>
   </ul>
-  <button class="add-new-product" (click)="test()">
+
+  <button class="add-new-product" (click)="open(addNewProductModal)">
     <p>+</p>
   </button>
+
 </div>

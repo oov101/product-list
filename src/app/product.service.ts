@@ -36,6 +36,14 @@ export class ProductService {
     );
   }
 
+  /** POST: add a new hero to the server */
+  addProduct (product: Product): Observable<Product> {
+    return this.http.post<Product>(this.productsUrl, product, httpOptions).pipe(
+      tap((product: Product) => this.log(`added product w/ id=${product.id}`)),
+      catchError(this.handleError<Product>('addProduct'))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
     this.messageService.add(`ProductService: ${message}`);
