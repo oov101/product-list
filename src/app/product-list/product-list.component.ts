@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { log } from 'util';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-product-list',
@@ -22,7 +23,7 @@ export class ProductListComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts()
-        .subscribe(products => this.products = products);
+      .subscribe(products => this.products = products);
   }
 
   combineOnSelectAndOpen(product, content) {
@@ -35,7 +36,7 @@ export class ProductListComponent implements OnInit {
   }
 
   open(content): void {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -44,7 +45,28 @@ export class ProductListComponent implements OnInit {
 
   save(modal): void {
     this.productService.updateProduct(this.selectedProduct)
-      .subscribe(() => modal.close('Save click'));
+      .subscribe(() => {
+        modal.close('Save click')
+        this.selectedProduct.updateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+      });
+  }
+
+  add(photoURL: string, name: string, kcal: number, price: number, description): void {
+    if (!photoURL) { return; }
+    if (!name) { return; }
+    if (!kcal) { return; }
+    if (!price) { return; }
+
+    let addTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+    let updateTime = "";
+
+    this.productService.addProduct({ photoURL, name, kcal, price, description, addTime, updateTime} as Product)
+      .subscribe(product => {
+        this.products.push(product);
+      });
+
+    console.log(photoURL, name, kcal, price, description);
+
   }
 
   private getDismissReason(reason: any): string {
@@ -53,7 +75,7 @@ export class ProductListComponent implements OnInit {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
 }
