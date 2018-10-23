@@ -34,12 +34,17 @@ export class ProductListComponent implements OnInit {
     this.selectedProduct = product;
   }
 
-  open(content) {
+  open(content): void {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+
+  save(modal): void {
+    this.productService.updateProduct(this.selectedProduct)
+      .subscribe(() => modal.close('Save click'));
   }
 
   private getDismissReason(reason: any): string {

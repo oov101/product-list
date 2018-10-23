@@ -32,7 +32,7 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      <button type="button" class="btn btn-outline-dark" (click)="save(modal)">Save</button>
     </div>
   </ng-template>
   <ul class="list-group">
@@ -41,4 +41,7 @@
       {{ product.name }}
     </li>
   </ul>
+  <button class="add-new-product" (click)="test()">
+    <p>+</p>
+  </button>
 </div>
