@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 255,
         price: 2.35,
         description: "Piwo jasne, alk. 6.0% obj., pasteryzowane",
-        addTime: "23-10-2018 11:21",
+        addTime: "October 23rd 2018, 6:32:44 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010079_25.jpg"
       },
@@ -20,7 +20,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 210,
         price: 1.99,
         description: "Piwo jasne, niepasteryzowane, mikrofiltrowane, alk. 5,6%",
-        addTime: "23-10-2018 11:23",
+        addTime: "October 23rd 2018, 6:33:47 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010759.jpg"
       },
@@ -30,8 +30,8 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 320,
         price: 2.69,
         description: "Piwo jasne, alk. 5,2% obj., pasteryzowane.",
-        addTime: "23-10-2018 11:25",
-        updateTime: "23-10-2018 13:17",
+        addTime: "October 23rd 2018, 6:35:12 pm",
+        updateTime: "October 23rd 2018, 6:43:42 pm",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010209_6.jpg"
       },
       { 
@@ -40,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 240,
         price: 4.75,
         description: "Piwo jasne, pełne, mocne, alk. 6,2%",
-        addTime: "23-10-2018 11:26",
+        addTime: "October 23rd 2018, 6:35:46 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010543_0.jpg"
       },
@@ -50,7 +50,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 160,
         price: 3.95,
         description: "Piwo jasne, pasteryzowane, alk. 5,0%",
-        addTime: "23-10-2018 11:27",
+        addTime: "October 23rd 2018, 6:41:22 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010347_3.jpg"
       },
@@ -60,7 +60,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 220,
         price: 6.65,
         description: "Piwo jasne pełne, pasteryzowane, alk. 5,0%",
-        addTime: "23-10-2018 11:28",
+        addTime: "October 23rd 2018, 6:42:34 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010711.jpg"
       },
@@ -70,9 +70,9 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 175,
         price: 3.85,
         description: "Piwo jasne, pasteryzowane, alk. 5,0%",
-        addTime: "23-10-2018 11:29",
+        addTime: "October 23rd 2018, 6:43:55 pm",
         updateTime: "",
-        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010169_22.jpg"
+        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010748_0.jpg"
       },
       { 
         id: 18,
@@ -80,7 +80,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 225,
         price: 2.25,
         description: "Piwo jasne, pasteryzowane, alk. 6,0%",
-        addTime: "23-10-2018 11:30",
+        addTime: "October 23rd 2018, 6:44:34 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010378_0.jpg"
       },
@@ -90,7 +90,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 210,
         price: 3.99,
         description: "Piwo jasne, pełne, pasteryzowane, alk. 4,5%",
-        addTime: "23-10-2018 11:31",
+        addTime: "October 23rd 2018, 6:45:25 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10011267.jpg"
       },
@@ -100,7 +100,7 @@ export class InMemoryDataService implements InMemoryDbService {
         kcal: 245,
         price: 4.65,
         description: "Piwo jasne, pełne, alk. 5,5 %",
-        addTime: "23-10-2018 11:32",
+        addTime: "October 23rd 2018, 6:47:31 pm",
         updateTime: "",
         photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010483.jpg"
       }
