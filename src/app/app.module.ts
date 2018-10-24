@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { EditProductFormComponent } from './edit-product-form/edit-product-form.component';
+import { AddProductFormComponent } from './add-product-form/add-product-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     MessagesComponent,
-    EditProductFormComponent
+    EditProductFormComponent,
+    AddProductFormComponent
   ],
   imports: [
     BrowserModule,

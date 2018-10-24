@@ -1,0 +1,22 @@
+<form [formGroup]="addProductForm">
+  <div>
+    <label>Nazwa:</label>
+    <input type="text" formControlName="name" class="form-control" />
+  </div>
+  <div>
+    <label>kcal:</label>
+    <input type="number" formControlName="kcal" class="form-control" />
+  </div>
+  <div>
+    <label>cena:</label>
+    <input type="number" formControlName="price" class="form-control" />
+  </div>
+  <div>
+    <label>opis:</label>
+    <textarea formControlName="description" class="form-control"></textarea>
+  </div>
+  <div>
+    <label>adres do zdjęcia:</label>
+    <input type="url" formControlName="photoURL" class="form-control" />
+  </div>
+</form>

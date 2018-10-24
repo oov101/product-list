@@ -24,26 +24,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
-          <label>photo URL:</label>
-          <input #photoURL  class="form-control"/>
-        <div>
-          <label>name:</label>
-          <input #name  class="form-control"/>
-        </div>
-        <div>
-          <label>kcal:</label>
-          <input #kcal  class="form-control"/>
-        </div>
-        <div>
-          <label>price:</label>
-          <input #price  class="form-control"/>
-        </div>
-        <div>
-          <label>description:</label>
-          <textarea #description class="form-control"></textarea>
-        </div>
-      </form>
+      <app-add-product-form></app-add-product-form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value, modal)">Add</button>
