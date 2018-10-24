@@ -8,29 +8,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
-          <div class="product-img" [style.background-image]="'url(' + selectedProduct.photoURL + ')'"></div>
-        <div>
-          <label>name:</label>
-          <input #name [ngModel]="selectedProduct.name" name="name" class="form-control">
-        </div>
-        <div>
-          <label>kcal:</label>
-          <input #kcal [ngModel]="selectedProduct.kcal" name="kcal" class="form-control">
-        </div>
-        <div>
-          <label>price:</label>
-          <input #price [ngModel]="selectedProduct.price" name="price" class="form-control">
-        </div>
-        <div>
-          <label>description:</label>
-          <textarea #description [ngModel]="selectedProduct.description" name="description" class="form-control"></textarea>
-        </div>
-        <div class="time-wrapper">
-          <p>Add time: {{ selectedProduct.addTime }}</p>
-          <p *ngIf="selectedProduct.updateTime.length">Recent update: {{ selectedProduct.updateTime }}</p>
-        </div>
-      </form>
+      <app-edit-product-form></app-edit-product-form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" (click)="delete(selectedProduct, modal)">Delete</button>
