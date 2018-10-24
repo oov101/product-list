@@ -18,6 +18,6 @@
   </div>
   <div class="time-wrapper">
     <p>Czas dodania: {{ product.addTime }}</p>
-    <p>Ostatnia aktualizacja: {{ product.updateTime }}</p>
+    <p *ngIf="product.updateTime.length">Ostatnia aktualizacja: {{ product.updateTime }}</p>
   </div>
 </form>
