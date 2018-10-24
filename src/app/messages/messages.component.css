@@ -1,4 +1,12 @@
 /* MessagesComponent's private CSS styles */
+.messages {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h2 {
   color: red;
   font-family: Arial, Helvetica, sans-serif;

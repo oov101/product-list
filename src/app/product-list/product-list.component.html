@@ -2,7 +2,7 @@
 
   <ng-template #selectedProductModal let-modal>
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Product detail</h4>
+      <h4 class="modal-title" id="modal-basic-title">Szczegóły produktu</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -26,7 +26,7 @@
           <label>description:</label>
           <textarea #description [ngModel]="selectedProduct.description" name="description" class="form-control"></textarea>
         </div>
-        <div>
+        <div class="time-wrapper">
           <p>Add time: {{ selectedProduct.addTime }}</p>
           <p *ngIf="selectedProduct.updateTime.length">Recent update: {{ selectedProduct.updateTime }}</p>
         </div>

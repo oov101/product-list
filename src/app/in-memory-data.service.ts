@@ -12,7 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Piwo jasne, alk. 6.0% obj., pasteryzowane",
         addTime: "October 23rd 2018, 6:32:44 pm",
         updateTime: "",
-        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010079_25.jpg"
+        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010081.jpg"
       },
       { 
         id: 12,
@@ -32,7 +32,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Piwo jasne, alk. 5,2% obj., pasteryzowane.",
         addTime: "October 23rd 2018, 6:35:12 pm",
         updateTime: "October 23rd 2018, 6:43:42 pm",
-        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010209_6.jpg"
+        photoURL: "http://www.kmdelikatesy.pl/files/imagecache/product_full/zdjecia_produktow/10010209.jpg"
       },
       { 
         id: 14,
