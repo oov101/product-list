@@ -11,14 +11,14 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MessagesComponent } from './messages/messages.component';
-import { SelectedProductFormComponent } from './selected-product-form/selected-product-form.component';
+import { EditProductFormComponent } from './edit-product-form/edit-product-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     MessagesComponent,
-    SelectedProductFormComponent
+    EditProductFormComponent
   ],
   imports: [
     BrowserModule,
