@@ -38,8 +38,4 @@ export class EditProductFormComponent implements OnInit {
     this.product.price = this.editProductForm.value.price;
     this.product.description = this.editProductForm.value.description;
   }
-
-  test() {
-    console.log('test!');
-  }
 }

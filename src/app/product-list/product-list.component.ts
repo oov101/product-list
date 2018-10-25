@@ -13,12 +13,14 @@ import * as moment from 'moment';
 export class ProductListComponent implements OnInit {
   products: Product[];
   selectedProduct: Product;
+  newProduct: Product;
   closeResult: string;
 
   constructor(private productService: ProductService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getProducts();
+    this.newProduct = {...this.newProduct};
   }
 
   getProducts(): void {
@@ -32,6 +34,8 @@ export class ProductListComponent implements OnInit {
   }
 
   onSelect(product: Product): void {
+    console.log(product);
+    
     this.selectedProduct = product;
   }
 
@@ -64,16 +68,12 @@ export class ProductListComponent implements OnInit {
       });
   }
 
-  add(photoURL: string, name: string, kcal: number, price: number, description: string, modal): void {
-    if (!photoURL) { return; }
-    if (!name) { return; }
-    if (!kcal) { return; }
-    if (!price) { return; }
-
+  add(modal): void {
     let addTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     let updateTime = "";
-
-    this.productService.addProduct({ photoURL, name, kcal, price, description, addTime, updateTime } as Product)
+    console.log(this.newProduct);
+    
+    this.productService.addProduct({ ...this.newProduct, addTime, updateTime } as Product)
       .subscribe(product => {
         this.products.push(product);
       });

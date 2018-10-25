@@ -24,10 +24,10 @@
       </button>
     </div>
     <div class="modal-body">
-      <app-add-product-form #addForm></app-add-product-form>
+      <app-add-product-form #addForm [product]="newProduct"></app-add-product-form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value, modal)">Add</button>
+      <button type="button" class="btn btn-outline-dark" (click)="addForm.createProduct(); add(modal)">Add</button>
     </div>
   </ng-template>
 
