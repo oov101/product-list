@@ -21,7 +21,6 @@ export class AddProductFormComponent implements OnInit {
   ngOnInit() { }
 
   createProduct() {
-      console.log(this.product);
       this.product.name = this.addProductForm.value.name;
       this.product.kcal = this.addProductForm.value.kcal;
       this.product.price = this.addProductForm.value.price;

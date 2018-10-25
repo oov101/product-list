@@ -28,14 +28,7 @@ export class ProductListComponent implements OnInit {
       .subscribe(products => this.products = products);
   }
 
-  combineOnSelectAndOpen(product, content) {
-    this.onSelect(product);
-    this.open(content);
-  }
-
   onSelect(product: Product): void {
-    console.log(product);
-    
     this.selectedProduct = product;
   }
 
@@ -55,23 +48,9 @@ export class ProductListComponent implements OnInit {
       });
   }
 
-  saveOld(modal, name, kcal, price, description): void {
-    this.selectedProduct.name = name.value;
-    this.selectedProduct.kcal = kcal.value;
-    this.selectedProduct.price = price.value;
-    this.selectedProduct.description = description.value;
-
-    this.productService.updateProduct(this.selectedProduct)
-      .subscribe(() => {
-        modal.close('Save click')
-        this.selectedProduct.updateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-      });
-  }
-
   add(modal): void {
     let addTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     let updateTime = "";
-    console.log(this.newProduct);
     
     this.productService.addProduct({ ...this.newProduct, addTime, updateTime } as Product)
       .subscribe(product => {

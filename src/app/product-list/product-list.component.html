@@ -32,7 +32,7 @@
   </ng-template>
 
   <ul class="list-group">
-    <li class="list-group-item list-group-item-action" *ngFor="let product of products" (click)="combineOnSelectAndOpen(product, selectedProductModal)"
+    <li class="list-group-item list-group-item-action" *ngFor="let product of products" (click)="onSelect(product); open(selectedProductModal)"
       [class.selected]="product === selectedProduct">
       {{ product.name }}
     </li>
