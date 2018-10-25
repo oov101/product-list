@@ -31,4 +31,15 @@ export class EditProductFormComponent implements OnInit {
       description: this.product.description
     });
   }
+
+  updateProduct() {
+    this.product.name = this.editProductForm.value.name;
+    this.product.kcal = this.editProductForm.value.kcal;
+    this.product.price = this.editProductForm.value.price;
+    this.product.description = this.editProductForm.value.description;
+  }
+
+  test() {
+    console.log('test!');
+  }
 }

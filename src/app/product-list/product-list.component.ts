@@ -43,7 +43,15 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  save(modal, name, kcal, price, description): void {
+  save(modal): void {
+    this.productService.updateProduct(this.selectedProduct)
+      .subscribe(() => {
+        modal.close('Save click')
+        this.selectedProduct.updateTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+      });
+  }
+
+  saveOld(modal, name, kcal, price, description): void {
     this.selectedProduct.name = name.value;
     this.selectedProduct.kcal = kcal.value;
     this.selectedProduct.price = price.value;
@@ -65,11 +73,11 @@ export class ProductListComponent implements OnInit {
     let addTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     let updateTime = "";
 
-    this.productService.addProduct({ photoURL, name, kcal, price, description, addTime, updateTime} as Product)
+    this.productService.addProduct({ photoURL, name, kcal, price, description, addTime, updateTime } as Product)
       .subscribe(product => {
         this.products.push(product);
       });
-      modal.close('Save click');
+    modal.close('Save click');
   }
 
   delete(product: Product, modal): void {

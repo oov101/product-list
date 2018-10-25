@@ -8,11 +8,11 @@
       </button>
     </div>
     <div class="modal-body">
-      <app-edit-product-form [product]="selectedProduct"></app-edit-product-form>
+      <app-edit-product-form #editForm [product]="selectedProduct"></app-edit-product-form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" (click)="delete(selectedProduct, modal)">Delete</button>
-      <button type="button" class="btn btn-success" (click)="save(modal, name, kcal, price, description)">Save</button>
+      <button type="button" class="btn btn-success" (click)="editForm.updateProduct(); save(modal)">Save</button>
     </div>
   </ng-template>
 
@@ -24,7 +24,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <app-add-product-form></app-add-product-form>
+      <app-add-product-form #addForm></app-add-product-form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="add(photoURL.value, name.value, kcal.value, price.value, description.value, modal)">Add</button>
